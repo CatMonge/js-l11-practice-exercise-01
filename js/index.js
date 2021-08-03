@@ -1,7 +1,7 @@
 const randomFolks = document.querySelector(".random-peeps");
 const selectUserNumber = document.querySelector("#users");
 
-const getData = async function (){
+const getData = async function (numUsers){
     const usersRequest = await fetch (`https://randomuser.me/api?results=${numUsers}`);
     const data = await usersRequest.json();
 
@@ -11,7 +11,7 @@ const getData = async function (){
 
 getData(1)
 
-const displayUsers = function(userResults){
+const displayUsers = function (userResults){
     randomFolks.innerHTML = "";
 
 for (const user of userResults){
